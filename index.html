@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arhaan Anand - Student Showcase</title>
+    <meta name="description" content="Aspiring Undergraduate in Management with a Passion for Financial Markets">
+    <meta property="og:title" content="Arhaan Anand">
+    <meta property="og:description" content="Aspiring Undergraduate in Management with a Passion for Financial Markets">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="profile">
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwZWE1ZTkiIHJ4PSIxMiIvPgogICAgICAgICAgICA8dGV4dCB4PSI1MCIgeT0iNzAiIGZvbnQtc2l6ZT0iNjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InN5c3RlbS11aSI+QTwvdGV4dD4KICAgICAgICA8L3N2Zz4=">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 0.75rem 0;
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        /* Shared item media (image / PDF / link) — every section type supports all three */
+        .item-media-img {
+            display: block; max-width: 260px; width: 100%; max-height: 170px;
+            object-fit: cover; border-radius: 10px; margin: 0.7rem 0 0.2rem;
+        }
+        .item-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.7rem; }
+        .item-actions a {
+            display: inline-flex; align-items: center; gap: 0.3rem;
+            font-size: 0.8rem; font-weight: 600; text-decoration: none;
+            padding: 0.36rem 0.8rem; border-radius: 999px;
+            border: 1px solid #0ea5e9; color: #0ea5e9;
+            background: transparent; transition: background 0.2s, color 0.2s;
+        }
+        .item-actions a:hover { background: #0ea5e9; color: #fff; }
+        nav .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #0ea5e9;
+            text-decoration: none;
+        }
+
+        nav .links {
+            display: flex;
+            gap: 0.6rem 1rem;
+            align-items: center;
+            list-style: none;
+            /* Sites with many sections: wrap onto extra rows instead of pushing
+               the whole page sideways (horizontal-overflow bug, 28 Jul 2026). */
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            min-width: 0;
+        }
+
+        nav .links a {
+            text-decoration: none;
+            color: #0ea5e9;
+            background: rgba(14, 165, 233, 0.08);
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+        }
+
+        nav .links a:hover {
+            background: #0ea5e9;
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .resume-btn {
+            background: #0ea5e9;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .resume-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .hero-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.35), 0 10px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: white;
+            color: #0ea5e9;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            font-size: 1.2rem;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .bio {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            line-height: 1.8;
+            color: #475569;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #0ea5e9;
+            display: inline-block;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+            margin: 3rem 0;
+        }
+
+        .research-paper {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .research-paper:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .paper-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .paper-journal {
+            display: inline-block;
+            background: rgba(14, 165, 233, 0.1);
+            color: #0ea5e9;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .paper-year {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .paper-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-abstract {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .paper-download {
+            display: inline-block;
+            background: #0ea5e9;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .paper-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+
+        .project-content p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: #0ea5e9;
+            text-decoration: none;
+            font-weight: 600;
+            transition: gap 0.2s;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .experience-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-header h3 {
+            font-size: 1.1rem;
+            color: #0f172a;
+        }
+
+        .experience-duration {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .experience-company {
+            color: #0ea5e9;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-description {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .highlight-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #0ea5e915;
+            color: #0ea5e9;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 0.75rem;
+            background: white;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .community-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .community-item h3 {
+            font-size: 1.1rem;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+
+        .community-item p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            padding: 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: #64748b;
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #0ea5e9;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #0ea5e9;
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 999;
+            font-size: 1.25rem;
+        }
+
+        .scroll-to-top.show {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-4px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Nav stays ONE compact row: logo + resume button; links become a
+               horizontally-scrollable pill row underneath. (Previously every link
+               stacked vertically in a tall gray column — the whole first screen
+               was navigation and white space.) */
+            nav {
+                flex-wrap: wrap;
+                gap: 0.6rem;
+                padding: 0 1rem;
+            }
+
+            nav .links {
+                order: 3;
+                width: 100%;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 0.5rem;
+                padding-bottom: 0.5rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            nav .links::-webkit-scrollbar { display: none; }
+
+            .hero {
+                padding: 2.25rem 0 1.75rem;
+            }
+
+            .hero-photo {
+                width: 110px;
+                height: 110px;
+                margin-bottom: 1.1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .social-icons {
+                margin: 1.25rem 0;
+            }
+
+            .bio {
+                padding: 1.25rem;
+                margin-bottom: 2rem;
+            }
+
+            main {
+                padding: 0 1.15rem;
+            }
+
+            section {
+                margin-bottom: 2rem;
+            }
+
+            .section-divider {
+                margin: 2rem 0;
+            }
+
+            section h2 {
+                font-size: 1.4rem;
+            }
+
+            footer {
+                margin-top: 2.5rem;
+                padding: 1.5rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">A</a>
+            <ul class="links">
+                <li><a href="#education">Education</a></li><li><a href="#internships-programs">Internships &amp; Programs</a></li><li><a href="#research-publications">Research &amp; Publications</a></li><li><a href="#projects">Projects</a></li><li><a href="#athletics">Athletics</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#honours-awards">Honours &amp; Awards</a></li><li><a href="#skills-languages">Skills &amp; Languages</a></li><li><a href="#community-volunteering">Community &amp; Volunteering</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            
+            <h1>Arhaan Anand</h1>
+            <p>Aspiring Undergraduate in Management with a Passion for Financial Markets</p>
+            
+        </section>
+
+        <div class="bio">I am a prospective undergraduate student with a passion for management and a strong interest in financial markets and quantitative finance. Having lived in Bahrain, I have gained diverse experiences through academic and extracurricular activities, which have shaped my interests in investment banking and global economics. I am co-founder of the St Christopher’s Investment Club, and I maintain an independent investment portfolio.</div>
+
+        <section id="education"><h2>Education</h2><div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Cambridge International A-Levels</h3>
+                            <span class="experience-duration">Expected Graduation: 2027</span>
+                        </div>
+                        <div class="experience-company">St Christopher’s School, Bahrain</div>
+                        <div class="experience-description">Pursuing A-Level Mathematics with expected A* and AS-Level Geography with a score of 185/200. Further Mathematics studies ongoing. Academic interests include quantitative finance, financial markets, mathematics, and global economics.</div>
+                        <div class="item-loc" style="font-size:.85em;opacity:.8;margin:2px 0 6px;">📍 Bahrain</div>
+                    </div></section><div class="section-divider"></div><section id="internships-programs"><h2>Internships &amp; Programs</h2><div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Summer Intern</h3>
+                            <span class="experience-duration">2025</span>
+                        </div>
+                        <div class="experience-company">J. Safra Sarasin</div>
+                        <div class="experience-description">Gained insight into financial services in the environment of an international Swiss private bank, strengthening interest in investment banking.</div>
+                        
+                    </div><div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Investment Banking</h3>
+                            <span class="experience-duration">2024 &amp; 2025</span>
+                        </div>
+                        <div class="experience-company">UCL Summer Courses</div>
+                        <div class="experience-description">Attended courses in investment banking to gain practical insights and knowledge.</div>
+                        
+                    </div><div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Business &amp; Entrepreneurship; Finance &amp; Economics</h3>
+                            <span class="experience-duration">2022 &amp; 2023</span>
+                        </div>
+                        <div class="experience-company">Oxford Summer Courses</div>
+                        <div class="experience-description">Participated in programs focused on business, entrepreneurship, finance, and economics.</div>
+                        
+                    </div><div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Money, Financial Institutions &amp; Markets</h3>
+                            <span class="experience-duration">2026</span>
+                        </div>
+                        <div class="experience-company">Harvard DCE Summer Program</div>
+                        <div class="experience-description">Completed a program exploring the intricacies of money, financial institutions, and markets.</div>
+                        
+                    </div></section><div class="section-divider"></div><section id="research-publications"><h2>Research &amp; Publications</h2><div class="research-paper">
+                        <div class="paper-meta">
+                            <span class="paper-journal"></span>
+                            <span class="paper-year">2026</span>
+                        </div>
+                        <div class="paper-title">Financial Market Volatility</div>
+                        <div class="paper-abstract">Examined how investors and firms act and respond to changing financial market conditions. Currently refining the work for publication with a management focus.</div>
+                        
+                    </div></section><div class="section-divider"></div><section id="projects"><h2>Projects</h2><div class="project-grid"><div class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, #f0f4f8, #e2e8f0);"></div>
+                        <div class="project-content">
+                            <h3>Independent Investment Portfolio</h3>
+                            <p>Maintain and monitor an independent investment portfolio to develop practical understanding of markets, risk, and investment decision-making.</p>
+                            
+                            
+                        </div>
+                    </div><div class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, #f0f4f8, #e2e8f0);"></div>
+                        <div class="project-content">
+                            <h3>Tutor Tree</h3>
+                            <p>Developing a tutoring-focused website and education initiative designed to connect students with tutoring support. Experience in entrepreneurship and digital platforms.</p>
+                            
+                            
+                        </div>
+                    </div></div></section><div class="section-divider"></div><section id="athletics"><h2>Athletics</h2><div class="experience-item">
+                        
+                        <h3>U19 School Volleyball Team</h3>
+                        <p>Winners in 2024/25, Runners-Up in 2025/26. Team captain in 2024.</p>
+                        
+                        
+                    </div><div class="experience-item">
+                        
+                        <h3>U19 BSME Games</h3>
+                        <p>Runners-Up in 2024/25 and 2025/26. Team captain in 2024.</p>
+                        
+                        
+                    </div><div class="experience-item">
+                        
+                        <h3>St Christopher’s Swimming Squad</h3>
+                        <p>Member from 2016 to 2024.</p>
+                        
+                        
+                    </div></section><div class="section-divider"></div><section id="certifications"><h2>Certifications</h2><div class="experience-item">
+                        
+                        <h3>LSE Math Essentials Course</h3>
+                        <p>Completed in 2025.</p>
+                        
+                        
+                    </div><div class="experience-item">
+                        
+                        <h3>Foundations of Finance, University of Cambridge</h3>
+                        <p>Completed in 2025.</p>
+                        
+                        
+                    </div><div class="experience-item">
+                        
+                        <h3>A-Level Mathematics Certificate, Imperial College London</h3>
+                        <p>Algebraic Methods, Graphs &amp; Applied Mathematics, completed in 2025.</p>
+                        
+                        
+                    </div></section><div class="section-divider"></div><section id="honours-awards"><h2>Honours &amp; Awards</h2><div class="experience-item">
+                        
+                        <h3>UKMT Silver Award</h3>
+                        <p></p>
+                        
+                        
+                    </div><div class="experience-item">
+                        
+                        <h3>UKMT Bronze Award</h3>
+                        <p></p>
+                        
+                        
+                    </div></section><div class="section-divider"></div><section id="skills-languages"><h2>Skills &amp; Languages</h2><div class="experience-item">
+                        
+                        <h3>Skills</h3>
+                        <p>Management, Finance, Financial Markets, Quantitative Analysis, Mathematics, Global Economics</p>
+                        
+                        
+                    </div><div class="experience-item">
+                        
+                        <h3>Interests</h3>
+                        <p>Investment Banking, Quantitative Finance, Entrepreneurship, Investing, Markets</p>
+                        
+                        
+                    </div></section><div class="section-divider"></div><section id="community-volunteering"><h2>Community &amp; Volunteering</h2><div class="community-item">
+                        
+                        <h3>Ramadan Food Drive</h3>
+                        <p></p>
+                        
+                    </div></section><div class="section-divider"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Arhaan Anand</p>
+        
+        <p>Built with <span style="color: #0ea5e9;">♥</span></p>
+    </footer>
+
+    <button class="scroll-to-top" id="scrollToTop">↑</button>
+
+    <script>
+        // Scroll to top button
+        const scrollBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const element = document.getElementById(href.slice(1));
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
