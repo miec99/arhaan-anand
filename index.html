@@ -1,435 +1,506 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arhaan Anand — Portfolio</title>
-    <meta name="description" content="Aspiring Undergraduate in Management with a Passion for Financial Markets">
-    <meta property="og:title" content="Arhaan Anand">
-    <meta property="og:description" content="Aspiring Undergraduate in Management with a Passion for Financial Markets">
-    <meta property="og:image" content="">
-    <meta property="og:type" content="profile">
-    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICAgICAgICAgICAgPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMxZDYzNGIiIHJ4PSIxMiIvPgogICAgICAgICAgICA8dGV4dCB4PSI1MCIgeT0iNzAiIGZvbnQtc2l6ZT0iNjAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InN5c3RlbS11aSI+QTwvdGV4dD4KICAgICAgICA8L3N2Zz4=">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --paper: #f7f5f2;
-            --card: #fffdfa;
-            --ink: #16130f;
-            --muted: #6f6759;
-            --hair: rgba(22, 19, 15, 0.10);
-            --accent: #1d634b;
-            --accent-soft: rgba(29, 99, 75, 0.10);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--paper);
-            color: var(--ink);
-            line-height: 1.65;
-            -webkit-font-smoothing: antialiased;
-        }
-        ::selection { background: var(--accent); color: #fff; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arhaan Anand | Portfolio</title>
+<meta name="description" content="Arhaan Anand: A Level student in Bahrain, founder of The Tutor Trees, co-author of research on customer retention in online tutoring, and aspiring investment banker.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0; --surface:#ffffff; --ink:#14213d; --text:#2b3245; --muted:#646b7d;
+  --line:#e3dfd5; --accent:#b8862b; --accent-soft:#f3ead7; --navy:#14213d; --navy-2:#1f3160;
+  --green:#2f6b4f; --green-soft:#e3efe8;
+  --serif:"Fraunces", Georgia, "Times New Roman", serif;
+  --sans:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --radius:14px; --shadow:0 1px 2px rgba(20,33,61,.04), 0 8px 24px rgba(20,33,61,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0e1424; --surface:#151d31; --ink:#eef0f5; --text:#cfd4e0; --muted:#98a0b3;
+    --line:#26304a; --accent:#d9a84a; --accent-soft:#2a2616; --navy:#0a1020; --navy-2:#16213f;
+    --green:#6cc19a; --green-soft:#16271f; --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 
-        header {
-            position: sticky; top: 0; z-index: 1000;
-            background: rgba(247, 245, 242, 0.9);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--hair);
-        }
-        nav {
-            max-width: 1040px; margin: 0 auto; padding: 0.8rem 1.5rem;
-            display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
-        }
-        /* Shared item media (image / PDF / link) — every section type supports all three */
-        .item-media-img {
-            /* Frame follows the image, never crops it: certificates are often A4
-               portrait, so height is driven by the picture's own aspect ratio. */
-            display: block; width: auto; height: auto;
-            max-width: min(320px, 100%); max-height: 440px;
-            object-fit: contain; border-radius: 10px; margin: 0.7rem 0 0.2rem;
-        }
-        .item-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.7rem; }
-        .item-actions a {
-            display: inline-flex; align-items: center; gap: 0.3rem;
-            font-size: 0.8rem; font-weight: 600; text-decoration: none;
-            padding: 0.36rem 0.8rem; border-radius: 999px;
-            border: 1px solid #1d634b; color: #1d634b;
-            background: transparent; transition: background 0.2s, color 0.2s;
-        }
-        .item-actions a:hover { background: #1d634b; color: #fff; }
-        nav .logo {
-            font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.3rem;
-            color: var(--ink); text-decoration: none; letter-spacing: -0.01em;
-        }
-        nav .logo em { color: var(--accent); font-style: normal; }
-        nav .links { display: flex; gap: 0.35rem; row-gap: 0.3rem; list-style: none; align-items: center; flex-wrap: wrap; justify-content: flex-end; min-width: 0; }
-        nav .links a {
-            text-decoration: none; color: var(--ink); font-size: 0.85rem; font-weight: 600;
-            padding: 0.4rem 0.8rem; border-radius: 999px; white-space: nowrap;
-            transition: background 0.25s, color 0.25s;
-        }
-        nav .links a:hover { background: var(--ink); color: var(--paper); }
-        .resume-btn {
-            background: var(--ink); color: var(--paper); text-decoration: none;
-            padding: 0.55rem 1.1rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600;
-            transition: background 0.25s, transform 0.2s; border: none; cursor: pointer;
-        }
-        .resume-btn:hover { background: var(--accent); transform: translateY(-1px); }
+/* Nav */
+header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--serif);font-weight:600;color:var(--ink);font-size:18px}
+.mono{width:34px;height:34px;border-radius:9px;background:var(--navy);color:#f3d58f;display:grid;place-items:center;font-family:var(--serif);font-size:15px;letter-spacing:.5px}
+.nav ul{list-style:none;display:flex;gap:26px}
+.nav ul a{text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav ul a:hover{color:var(--ink)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:40px;height:40px;cursor:pointer;color:var(--ink)}
+.menu-btn svg{width:20px;height:20px}
 
-        main { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
+/* Hero */
+.hero{padding:88px 0 72px;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent)}
+.hero h1{font-family:var(--serif);font-weight:700;color:var(--ink);font-size:clamp(44px,7.5vw,84px);line-height:1.02;letter-spacing:-.02em;margin:18px 0 20px}
+.hero .lede{font-size:clamp(17px,2vw,20px);max-width:640px;color:var(--text)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 34px}
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;padding:7px 13px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--text)}
+.chip svg{width:15px;height:15px;color:var(--accent)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .15s, box-shadow .2s, background .2s}
+.btn svg{width:16px;height:16px}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-primary:hover{background:var(--navy-2);transform:translateY(-1px)}
+.btn-ghost{border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--accent);transform:translateY(-1px)}
 
-        .hero {
-            display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem;
-            align-items: center; padding: 5rem 0 4rem;
-        }
-        .hero-eyebrow {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            color: var(--accent); font-size: 0.78rem; font-weight: 700;
-            letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.1rem;
-        }
-        .hero-eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--accent); }
-        .hero h1 {
-            font-family: 'Fraunces', serif; font-weight: 700;
-            font-size: clamp(2.7rem, 6.5vw, 4.4rem); line-height: 1.04;
-            letter-spacing: -0.02em; margin-bottom: 1rem;
-        }
-        .hero .tagline { font-size: 1.15rem; color: var(--muted); max-width: 34rem; margin-bottom: 1.6rem; }
-        .hero-photo-wrap { position: relative; justify-self: end; }
-        .hero-photo {
-            width: min(300px, 100%); aspect-ratio: 4/5; object-fit: cover;
-            border-radius: 22px; display: block;
-            box-shadow: 0 24px 60px rgba(22, 19, 15, 0.18);
-        }
-        .hero-photo-wrap::after {
-            content: ""; position: absolute; inset: 14px -14px -14px 14px;
-            border: 2px solid var(--accent); border-radius: 22px; z-index: -1; opacity: 0.55;
-        }
-        .social-icons { display: flex; gap: 0.7rem; margin-top: 0.4rem; }
-        .social-icons a {
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 42px; height: 42px; border-radius: 50%;
-            background: var(--card); border: 1px solid var(--hair); color: var(--ink);
-            text-decoration: none; transition: transform 0.25s, background 0.25s, color 0.25s;
-        }
-        .social-icons a:hover { background: var(--accent); color: #fff; transform: translateY(-3px); }
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px;box-shadow:var(--shadow)}
+.stat b{display:block;font-family:var(--serif);font-size:30px;color:var(--ink);line-height:1.1;font-weight:600}
+.stat span{font-size:13.5px;color:var(--muted)}
 
-        .bio {
-            font-size: 1.06rem; color: #3d372e; max-width: 46rem; line-height: 1.85;
-            border-left: 3px solid var(--accent); padding: 0.4rem 0 0.4rem 1.4rem;
-            margin: 0 0 4rem;
-        }
+/* Sections */
+section{padding:72px 0;scroll-margin-top:64px}
+section.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-head{margin-bottom:34px;max-width:680px}
+.sec-head h2{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:clamp(30px,4vw,40px);line-height:1.15;letter-spacing:-.01em;margin-top:10px}
+.sec-head p{color:var(--muted);margin-top:10px}
 
-        section { margin-bottom: 4.5rem; }
-        .sec-head {
-            display: flex; align-items: baseline; gap: 1rem;
-            border-bottom: 1px solid var(--hair); padding-bottom: 0.9rem; margin-bottom: 1.8rem;
-        }
-        .sec-num { font-family: 'Fraunces', serif; color: var(--accent); font-weight: 600; font-size: 1rem; }
-        .sec-head h2 {
-            font-family: 'Fraunces', serif; font-weight: 600;
-            font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -0.01em;
-        }
+/* Feature cards */
+.feature{display:grid;grid-template-columns:1.25fr 1fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+section.alt .feature{background:var(--bg)}
+.feature .body{padding:36px}
+.feature .side{background:var(--navy);color:#dfe4f0;padding:36px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;position:relative;overflow:hidden}
+.feature .side::after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;border:34px solid rgba(243,213,143,.08)}
+.tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:6px;background:var(--accent-soft);color:var(--accent)}
+.tag.green{background:var(--green-soft);color:var(--green)}
+.feature h3{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:clamp(22px,2.6vw,27px);line-height:1.25;margin:16px 0 12px}
+.authors{font-size:14.5px;color:var(--muted);margin-bottom:16px}
+.authors strong{color:var(--ink);font-weight:600}
+.feature p{margin-bottom:14px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px}
+.pill{font-size:13px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);color:var(--text);background:var(--surface)}
+section.alt .pill{background:var(--surface)}
+.side h4{font-family:var(--serif);color:#fff;font-size:20px;font-weight:600}
+.side dl{display:grid;gap:16px;position:relative;z-index:1}
+.side dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#f3d58f;font-weight:600}
+.side dd{font-size:15px;color:#e6e9f2;margin-top:2px}
+.side .big{font-family:var(--serif);font-size:54px;color:#fff;line-height:1;font-weight:600}
+.side .btn{align-self:flex-start;background:#f3d58f;color:#14213d;position:relative;z-index:1}
+.side .btn:hover{background:#fff}
 
-        .xp-item {
-            position: relative; padding: 0 0 1.8rem 1.7rem;
-            border-left: 1px solid var(--hair);
-        }
-        .xp-item:last-child { padding-bottom: 0.4rem; }
-        .xp-item::before {
-            content: ""; position: absolute; left: -5px; top: 0.45rem;
-            width: 9px; height: 9px; border-radius: 50%; background: var(--accent);
-        }
-        .xp-top { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: baseline; }
-        .xp-top h3 { font-size: 1.06rem; font-weight: 700; }
-        .xp-duration {
-            font-size: 0.75rem; font-weight: 600; color: var(--accent);
-            background: var(--accent-soft); padding: 0.2rem 0.7rem; border-radius: 999px; white-space: nowrap;
-        }
-        .xp-company { color: var(--muted); font-weight: 600; font-size: 0.92rem; margin: 0.15rem 0 0.4rem; }
-        .xp-item p { color: #4a443a; font-size: 0.95rem; }
-        .xp-item ul { margin: 0.5rem 0 0 1.1rem; color: #4a443a; font-size: 0.92rem; }
-        .xp-item img { width: auto; height: auto; max-width: 220px; max-height: 300px; object-fit: contain; border-radius: 12px; margin-top: 0.7rem; border: 1px solid var(--hair); }
+/* Grid cards */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.grid.three{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:transform .2s, border-color .2s}
+section.alt .card{background:var(--bg)}
+.card:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.card .when{font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.02em}
+.card h3{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);line-height:1.3;margin:6px 0 10px}
+.card p,.card li{font-size:15px}
+.card ul{padding-left:18px}
+.card li{margin-bottom:6px}
+.card li::marker{color:var(--accent)}
+.icon{width:42px;height:42px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:16px}
+.icon svg{width:21px;height:21px}
 
-        .paper {
-            background: var(--card); border: 1px solid var(--hair); border-radius: 16px;
-            padding: 1.5rem 1.6rem; margin-bottom: 1.1rem;
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
-        .paper:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(22, 19, 15, 0.10); }
-        .paper-meta { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.6rem; }
-        .paper-journal {
-            background: var(--accent-soft); color: var(--accent);
-            font-size: 0.75rem; font-weight: 700; padding: 0.22rem 0.75rem; border-radius: 999px;
-        }
-        .paper-year { color: var(--muted); font-size: 0.8rem; font-weight: 600; }
-        .paper h3 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; line-height: 1.35; margin-bottom: 0.45rem; }
-        .paper p { color: #4a443a; font-size: 0.93rem; margin-bottom: 0.9rem; }
-        .paper-link {
-            display: inline-flex; align-items: center; gap: 0.4rem;
-            background: var(--ink); color: var(--paper); text-decoration: none;
-            font-size: 0.82rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 999px;
-            transition: background 0.25s;
-        }
-        .paper-link:hover { background: var(--accent); }
+/* Timeline */
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl-item{position:relative;padding-bottom:30px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-28px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+section.alt .tl-item::before{background:var(--surface)}
+.tl-item .when{font-size:13px;font-weight:600;color:var(--accent)}
+.tl-item h3{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink);margin:3px 0 6px}
+.tl-item p{font-size:15px;max-width:700px}
 
-        .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.3rem; }
-        .proj-card {
-            background: var(--card); border: 1px solid var(--hair); border-radius: 16px; overflow: hidden;
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
-        .proj-card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(22, 19, 15, 0.12); }
-        .proj-card img { width: 100%; height: auto; max-height: 460px; object-fit: contain; display: block; background: var(--paper, #fff); }
-        .proj-card .proj-ph { width: 100%; aspect-ratio: 16/10; display: block; }
-        .proj-card .proj-ph { background: linear-gradient(135deg, var(--accent-soft), rgba(29, 99, 75, 0.28)); }
-        .proj-body { padding: 1.15rem 1.25rem 1.35rem; }
-        .proj-body h3 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.08rem; margin-bottom: 0.4rem; }
-        .proj-body p { color: #4a443a; font-size: 0.92rem; margin-bottom: 0.7rem; }
-        .proj-body a { color: var(--accent); font-weight: 700; font-size: 0.86rem; text-decoration: none; }
-        .proj-body a:hover { text-decoration: underline; }
+/* Education */
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grades{display:grid;gap:10px;margin-top:6px}
+.grade{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:15px}
+section.alt .grade{background:var(--surface)}
+.grade b{font-family:var(--serif);font-size:19px;color:var(--ink);white-space:nowrap}
+.grade small{display:block;color:var(--muted);font-size:13px}
+.list-clean{list-style:none;display:grid;gap:10px}
+.list-clean li{display:flex;gap:12px;align-items:flex-start;font-size:15px;padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.list-clean li:last-child{border-bottom:none;padding-bottom:0}
+.list-clean .yr{flex:0 0 auto;font-size:12.5px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:6px;margin-top:2px}
 
-        .tile-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.1rem; }
-        .tile {
-            background: var(--card); border: 1px solid var(--hair); border-radius: 14px; padding: 1.2rem 1.3rem;
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
-        .tile:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(22, 19, 15, 0.10); }
-        .tile h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; }
-        .tile .tile-year { color: var(--accent); font-size: 0.76rem; font-weight: 700; }
-        .tile p { color: #4a443a; font-size: 0.9rem; }
-        .tile img { width: 100%; height: auto; max-height: 420px; object-fit: contain; border-radius: 10px; margin-top: 0.7rem; border: 1px solid var(--hair); }
+/* Sports */
+.medals{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.medal{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;gap:14px;align-items:flex-start}
+section.alt .medal{background:var(--bg)}
+.medal .m{flex:0 0 38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff}
+.m.gold{background:linear-gradient(135deg,#d9a84a,#a8781f)}
+.m.silver{background:linear-gradient(135deg,#a9b1bf,#737c8c)}
+.m.navy{background:linear-gradient(135deg,#2c4a8a,#14213d)}
+.medal b{display:block;color:var(--ink);font-size:15.5px;line-height:1.35}
+.medal span{font-size:13.5px;color:var(--muted)}
 
-        .gallery { columns: 3 240px; column-gap: 1rem; }
-        .gallery figure { break-inside: avoid; margin-bottom: 1rem; }
-        .gallery img { width: 100%; border-radius: 14px; display: block; border: 1px solid var(--hair); }
-        .gallery figcaption { font-size: 0.8rem; color: var(--muted); padding: 0.35rem 0.2rem; }
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skills h3{font-family:var(--serif);font-size:18px;color:var(--ink);font-weight:600;margin-bottom:12px}
+.skills .pills{margin:0}
 
-        footer {
-            border-top: 1px solid var(--hair); margin-top: 4rem; padding: 2.2rem 1.5rem 2.6rem; text-align: center;
-        }
-        footer .logo { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.2rem; }
-        footer .logo em { color: var(--accent); font-style: normal; }
-        footer p { color: var(--muted); font-size: 0.86rem; margin-top: 0.5rem; }
-        footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
+/* Contact */
+.contact{background:var(--navy);color:#dfe4f0;border-radius:20px;padding:56px 40px;text-align:center;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;left:-80px;top:-80px;width:260px;height:260px;border-radius:50%;border:40px solid rgba(243,213,143,.07)}
+.contact h2{font-family:var(--serif);color:#fff;font-size:clamp(28px,4vw,40px);font-weight:600;margin-bottom:12px;position:relative}
+.contact p{max-width:560px;margin:0 auto 26px;position:relative}
+.contact .cta{justify-content:center;position:relative}
+.contact .btn-primary{background:#f3d58f;color:#14213d}
+.contact .btn-primary:hover{background:#fff}
+.contact .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.25)}
+.contact .btn-ghost:hover{border-color:#f3d58f}
 
-        .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .reveal.in { opacity: 1; transform: none; }
-        @media (prefers-reduced-motion: reduce) {
-            .reveal { opacity: 1; transform: none; transition: none; }
-        }
+footer{padding:34px 0 44px;text-align:center;color:var(--muted);font-size:13.5px}
 
-        @media (max-width: 768px) {
-            nav { padding: 0.7rem 1rem; }
-            nav .links {
-                order: 3; width: 100%; overflow-x: auto; flex-wrap: nowrap;
-                padding-bottom: 0.45rem; -webkit-overflow-scrolling: touch; scrollbar-width: none;
-            }
-            nav .links::-webkit-scrollbar { display: none; }
-            nav .links a { background: var(--accent-soft); color: var(--accent); }
-            main { padding: 0 1.15rem; }
-            .hero {
-                grid-template-columns: 1fr; gap: 1.6rem; padding: 2.4rem 0 2rem; text-align: left;
-            }
-            .hero-photo-wrap { justify-self: start; order: -1; }
-            .hero-photo { width: 132px; aspect-ratio: 1; border-radius: 18px; }
-            .hero-photo-wrap::after { inset: 9px -9px -9px 9px; border-radius: 18px; }
-            .bio { margin-bottom: 2.4rem; font-size: 1rem; }
-            section { margin-bottom: 2.6rem; }
-            .gallery { columns: 2 150px; }
-        }
-    </style>
+/* Reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* Responsive */
+@media (max-width:900px){
+  .feature{grid-template-columns:1fr}
+  .grid.three,.skills,.medals{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--surface);border-bottom:1px solid var(--line);padding:8px 16px 14px}
+  .nav ul.open{display:flex}
+  .nav ul a{display:block;padding:12px 4px;font-size:16px;border-bottom:1px solid var(--line)}
+  .nav ul li:last-child a{border-bottom:none}
+  .menu-btn{display:grid;place-items:center}
+  .wrap{padding:0 16px}
+  .hero{padding:56px 0 48px}
+  section{padding:56px 0}
+  .grid,.grid.three,.edu,.skills,.medals{grid-template-columns:1fr}
+  .feature .body,.feature .side{padding:26px 22px}
+  .contact{padding:44px 22px}
+}
+</style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#" class="logo">Arhaan<em>.</em></a>
-            <ul class="links"><li><a href="#education">Education</a></li><li><a href="#research-publications">Research &amp; Publications</a></li><li><a href="#internships-programs">Internships &amp; Programs</a></li><li><a href="#projects">Projects</a></li><li><a href="#athletics">Athletics</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#honours-awards">Honours &amp; Awards</a></li><li><a href="#skills-languages">Skills &amp; Languages</a></li><li><a href="#community-volunteering">Community &amp; Volunteering</a></li></ul>
-            
-        </nav>
-    </header>
-    <main>
-        <div class="hero">
-            <div>
-                <span class="hero-eyebrow">Portfolio</span>
-                <h1>Arhaan Anand</h1>
-                <p class="tagline">Aspiring Undergraduate in Management with a Passion for Financial Markets</p>
-                
-            </div>
-            
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand"><span class="mono">AA</span>Arhaan Anand</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul id="navLinks">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#venture">Venture</a></li>
+      <li><a href="#finance">Finance</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#beyond">Beyond</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Student · Founder · Researcher</span>
+    <h1>Arhaan Anand</h1>
+    <p class="lede">An A Level student in Bahrain with a focus on management, finance and markets. I founded The Tutor Trees, a peer-to-peer tutoring platform, and co-authored a research paper on what keeps families with an online tutoring service.</p>
+    <div class="meta">
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Bahrain</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"/></svg>St Christopher's School, Class of 2027</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg>Prospective Undergraduate, Management</span>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="#research">View research
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="https://thetutortrees.com/" target="_blank" rel="noopener">Visit The Tutor Trees
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal"><b>675+</b><span>students helped through The Tutor Trees</span></div>
+      <div class="stat reveal"><b>220</b><span>tutoring relationships analysed in my research</span></div>
+      <div class="stat reveal"><b>A</b><span>A Level Mathematics (remark pending for A*)</span></div>
+      <div class="stat reveal"><b>ABRSM 7</b><span>Grade 7 Piano</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Research</span>
+      <h2>Publications and academic work</h2>
+      <p>Research that grew out of running a tutoring platform, and independent work on financial markets.</p>
+    </div>
+
+    <article class="feature reveal">
+      <div class="body">
+        <span class="tag">Research Paper · Submitted for publication</span>
+        <h3>Who Drives Customer Retention in Online Tutoring? Tutor-Student Fit, Parent Value Perceptions and Service Responsiveness in an IGCSE Tutoring Platform</h3>
+        <p class="authors"><strong>Arhaan Anand</strong> (first and corresponding author) and <strong>Dr. Karan Gupta</strong></p>
+        <p>An empirical study of why families stay with, or leave, an online IGCSE tutoring service. Using data from 220 tutoring relationships on the platform I founded, the paper examines three drivers of retention: how well a tutor and student fit, how parents perceive the value of tutoring, and how responsive the service is.</p>
+        <p>The data were collected between May and June 2026 under formal ethics approval, so the findings come directly from a real, operating business.</p>
+        <div class="pills">
+          <span class="pill">Customer retention</span>
+          <span class="pill">EdTech</span>
+          <span class="pill">Service management</span>
+          <span class="pill">Quantitative analysis</span>
         </div>
-        <p class="bio reveal">I am a prospective undergraduate student with a passion for management and a strong interest in financial markets and quantitative finance. Having lived in Bahrain, I have gained diverse experiences through academic and extracurricular activities, which have shaped my interests in investment banking and global economics. I am co-founder of the St Christopher’s Investment Club, and I maintain an independent investment portfolio.</p>
-        <section id="education"><div class="sec-head"><span class="sec-num">01</span><h2>Education</h2></div><div class="xp-item">
-                        <div class="xp-top">
-                            <h3>Cambridge International A-Levels</h3>
-                            <span class="xp-duration">Expected Graduation: 2027</span>
-                        </div>
-                        <div class="xp-company">St Christopher’s School, Bahrain</div>
-                        <p>Pursuing A-Level Mathematics with expected A* and AS-Level Geography with a score of 185/200. Further Mathematics studies ongoing. Academic interests include quantitative finance, financial markets, mathematics, and global economics.</p>
-                        
-                        
-                        <div class="item-loc" style="font-size:.85em;opacity:.8;margin:2px 0 6px;">📍 Bahrain</div>
-                    </div></section><section id="research-publications"><div class="sec-head"><span class="sec-num">02</span><h2>Research &amp; Publications</h2></div><div class="paper">
-                        <div class="paper-meta">
-                            <span class="paper-journal">Journal of Education and Training Studies </span>
-                            <span class="paper-year">Online Published: 2026</span>
-                        </div>
-                        <h3>When AI Writes the Text: AI-Assistance Depth and Recorded Disclosure in University Application Essays</h3>
-                        
-                        <div class="item-actions"><a href="assets/doc-3d4d9edcd0.pdf" class="item-doc" target="_blank" rel="noopener noreferrer" download>Download PDF</a><a href="https://www.ccsenet.org/journal/index.php/jel" class="item-link" target="_blank" rel="noopener noreferrer">Open link ↗</a></div>
-                    </div><div class="paper">
-                        <div class="paper-meta">
-                            
-                            <span class="paper-year">2026</span>
-                        </div>
-                        <h3>Financial Market Volatility</h3>
-                        <p>Examined how investors and firms act and respond to changing financial market conditions. Currently refining the work for publication with a management focus.</p>
-                        
-                    </div></section><section id="internships-programs"><div class="sec-head"><span class="sec-num">03</span><h2>Internships &amp; Programs</h2></div><div class="xp-item">
-                        <div class="xp-top">
-                            <h3>Summer Intern</h3>
-                            <span class="xp-duration">2025</span>
-                        </div>
-                        <div class="xp-company">J. Safra Sarasin</div>
-                        <p>Gained insight into financial services in the environment of an international Swiss private bank, strengthening interest in investment banking.</p>
-                        
-                        
-                        
-                    </div><div class="xp-item">
-                        <div class="xp-top">
-                            <h3>Investment Banking</h3>
-                            <span class="xp-duration">2024 &amp; 2025</span>
-                        </div>
-                        <div class="xp-company">UCL Summer Courses</div>
-                        <p>Attended courses in investment banking to gain practical insights and knowledge.</p>
-                        
-                        
-                        
-                    </div><div class="xp-item">
-                        <div class="xp-top">
-                            <h3>Business &amp; Entrepreneurship; Finance &amp; Economics</h3>
-                            <span class="xp-duration">2022 &amp; 2023</span>
-                        </div>
-                        <div class="xp-company">Oxford Summer Courses</div>
-                        <p>Participated in programs focused on business, entrepreneurship, finance, and economics.</p>
-                        
-                        
-                        
-                    </div><div class="xp-item">
-                        <div class="xp-top">
-                            <h3>Money, Financial Institutions &amp; Markets</h3>
-                            <span class="xp-duration">2026</span>
-                        </div>
-                        <div class="xp-company">Harvard DCE Summer Program</div>
-                        <p>Completed a program exploring the intricacies of money, financial institutions, and markets.</p>
-                        
-                        
-                        
-                    </div></section><section id="projects"><div class="sec-head"><span class="sec-num">04</span><h2>Projects</h2></div><div class="proj-grid"><div class="proj-card">
-                        <img src="assets/img-3a9b42aef4.png" alt="Independent Investment Portfolio">
-                        <div class="proj-body">
-                            <h3>Independent Investment Portfolio</h3>
-                            <p>Maintain and monitor an independent investment portfolio to develop practical understanding of markets, risk, and investment decision-making.</p>
-                            
-                            
-                        </div>
-                    </div><div class="proj-card">
-                        <img src="assets/img-11f5aebcc3.png" alt="Tutor Tree">
-                        <div class="proj-body">
-                            <h3>Tutor Tree</h3>
-                            <p>Developing a tutoring-focused website and education initiative designed to connect students with tutoring support. Experience in entrepreneurship and digital platforms.</p>
-                            
-                            
-                        </div>
-                    </div></div></section><section id="athletics"><div class="sec-head"><span class="sec-num">05</span><h2>Athletics</h2></div><div class="tile-grid"><div class="tile">
-                        <span class="tile-year">2024</span>
-                        <h3>U19 School Volleyball Team</h3>
-                        <p>Winners in 2024/25, Runners-Up in 2025/26. Team captain in 2024.</p>
-                        
-                        
-                    </div><div class="tile">
-                        <span class="tile-year">2024</span>
-                        <h3>U19 BSME Games</h3>
-                        <p>Runners-Up in 2024/25 and 2025/26. Team captain in 2024.</p>
-                        
-                        
-                    </div><div class="tile">
-                        <span class="tile-year">2024</span>
-                        <h3>St Christopher’s Swimming Squad</h3>
-                        <p>Member from 2016 to 2024.</p>
-                        
-                        
-                    </div></div></section><section id="certifications"><div class="sec-head"><span class="sec-num">06</span><h2>Certifications</h2></div><div class="tile-grid"><div class="tile">
-                        <span class="tile-year">2025</span>
-                        <h3>LSE Math Essentials Course</h3>
-                        <p>Completed in 2025.</p>
-                        
-                        
-                    </div><div class="tile">
-                        <span class="tile-year">2025</span>
-                        <h3>Foundations of Finance, University of Cambridge</h3>
-                        <p>Completed in 2025.</p>
-                        
-                        
-                    </div><div class="tile">
-                        <span class="tile-year">2025</span>
-                        <h3>A-Level Mathematics Certificate, Imperial College London</h3>
-                        <p>Algebraic Methods, Graphs &amp; Applied Mathematics, completed in 2025.</p>
-                        
-                        
-                    </div></div></section><section id="honours-awards"><div class="sec-head"><span class="sec-num">07</span><h2>Honours &amp; Awards</h2></div><div class="tile-grid"><div class="tile">
-                        <span class="tile-year">2024</span>
-                        <h3>UKMT Silver Award</h3>
-                        
-                        
-                        
-                    </div><div class="tile">
-                        <span class="tile-year">2025</span>
-                        <h3>UKMT Bronze Award</h3>
-                        
-                        
-                        
-                    </div></div></section><section id="skills-languages"><div class="sec-head"><span class="sec-num">08</span><h2>Skills &amp; Languages</h2></div><div class="tile-grid"><div class="tile">
-                        
-                        <h3>Skills</h3>
-                        <p>Management, Finance, Financial Markets, Quantitative Analysis, Mathematics, Global Economics</p>
-                        
-                        
-                    </div><div class="tile">
-                        
-                        <h3>Interests</h3>
-                        <p>Investment Banking, Quantitative Finance, Entrepreneurship, Investing, Markets</p>
-                        
-                        
-                    </div></div></section><section id="community-volunteering"><div class="sec-head"><span class="sec-num">09</span><h2>Community &amp; Volunteering</h2></div><div class="tile-grid"><div class="tile">
-                        <span class="tile-year">2024</span>
-                        <h3>Ramadan Food Drive</h3>
-                        
-                        
-                        
-                    </div></div></section>
-    </main>
-    <footer>
-        <div class="logo">Arhaan<em>.</em></div>
-        <p>© 2026 Arhaan Anand</p>
-    </footer>
-    <script>
-        (function() {
-            var els = document.querySelectorAll('section, .bio');
-            els.forEach(function(el) { el.classList.add('reveal'); });
-            if (!('IntersectionObserver' in window)) {
-                els.forEach(function(el) { el.classList.add('in'); });
-                return;
-            }
-            var io = new IntersectionObserver(function(entries) {
-                entries.forEach(function(e) {
-                    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-                });
-            }, { threshold: 0.08 });
-            els.forEach(function(el) { io.observe(el); });
-        })();
-    </script>
+        <a class="btn btn-primary" href="https://www.ccsenet.org/journal/index.php/jel" target="_blank" rel="noopener">Journal of Education and Learning
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+      <aside class="side">
+        <h4>At a glance</h4>
+        <dl>
+          <div><dt>Dataset</dt><dd>220 tutoring relationships, 24 tutors</dd></div>
+          <div><dt>Setting</dt><dd>Online IGCSE tutoring platform, Bahrain</dd></div>
+          <div><dt>Journal</dt><dd>Journal of Education and Learning (CCSE)</dd></div>
+          <div><dt>My role</dt><dd>First and corresponding author</dd></div>
+        </dl>
+      </aside>
+    </article>
+
+    <div class="grid" style="margin-top:18px">
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-6 4 4 8-10"/><path d="M14 5h6v6"/></svg></div>
+        <span class="when">2026</span>
+        <h3>How Investors and Firms Act and Respond to Financial Market Volatility</h3>
+        <p>Independent research into how investors and firms respond to changing financial-market conditions. I am now refining the work with a stronger management and business perspective and exploring routes to publication.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H5l-1 4z"/><path d="M8 9h8M8 12h5"/></svg></div>
+        <span class="when">2026</span>
+        <h3>LSESU Essay Competition</h3>
+        <p>Researched, drafted and refined an essay for the LSE Students' Union competition, examining the relationship between technology and worker wellbeing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENTURE -->
+<section id="venture">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Entrepreneurship</span>
+      <h2>Founder, The Tutor Trees</h2>
+      <p>Students who have recently sat their exams tutoring the next cohort.</p>
+    </div>
+
+    <article class="feature reveal">
+      <div class="body">
+        <span class="tag green">Founder and Project Lead</span>
+        <h3>A peer-to-peer tutoring platform for IGCSE, GCSE and A Level students</h3>
+        <p>The Tutor Trees connects students with peers who have recently been through the same exams, so tutoring comes from someone who knows the syllabus, the pressure and the shortcuts first-hand. The platform supports IGCSE, GCSE, AS and A Level and Pearson Edexcel exam preparation.</p>
+        <p>I lead the project, from developing the website to day-to-day execution. Understanding why families stay with a tutoring service became the subject of my research paper.</p>
+        <div class="pills">
+          <span class="pill">Peer tutoring</span>
+          <span class="pill">Operations</span>
+          <span class="pill">Web development</span>
+          <span class="pill">Digital platforms</span>
+        </div>
+        <a class="btn btn-primary" href="https://thetutortrees.com/" target="_blank" rel="noopener">thetutortrees.com
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+      <aside class="side">
+        <div>
+          <div class="big">675+</div>
+          <dd style="margin-top:8px">students helped, and counting</dd>
+        </div>
+        <dl>
+          <div><dt>Model</dt><dd>Students tutoring students</dd></div>
+          <div><dt>Levels</dt><dd>IGCSE · GCSE · AS and A Level · Edexcel</dd></div>
+        </dl>
+        <a class="btn" href="https://thetutortrees.com/" target="_blank" rel="noopener">Explore the platform
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </aside>
+    </article>
+  </div>
+</section>
+
+<!-- FINANCE -->
+<section id="finance" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Leadership and Finance</span>
+      <h2>Markets, investing and professional experience</h2>
+      <p>Working towards a career in investment banking and quantitative analysis.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <span class="when">2025 to present</span>
+        <h3>Co-Founder, St Christopher's Investment Club</h3>
+        <p>Co-founded and helped build a student-led club focused on financial markets, investing and financial literacy. Members pitch investment ideas, follow market movements and analyse portfolios together.</p>
+      </div>
+      <div class="tl-item reveal">
+        <span class="when">Summer 2025</span>
+        <h3>Summer Intern, J. Safra Sarasin</h3>
+        <p>Gained exposure to the operations and professional environment of an international Swiss private bank, and practical insight into financial services that strengthened my interest in investment banking.</p>
+      </div>
+      <div class="tl-item reveal">
+        <span class="when">2024 to present</span>
+        <h3>Independent Investment Portfolio</h3>
+        <p>Maintain and monitor my own investment portfolio to build a practical understanding of markets, risk and investment decision-making.</p>
+      </div>
+      <div class="tl-item reveal">
+        <span class="when">January to February 2026</span>
+        <h3>Steven's Day Trading Competition</h3>
+        <p>Competed in a simulated trading environment, applying market analysis and making investment decisions under time constraints.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Education</span>
+      <h2>Academics and further learning</h2>
+      <p>Cambridge International A Levels at St Christopher's School, Bahrain, with interests in quantitative finance, financial markets, mathematics and global economics.</p>
+    </div>
+
+    <div class="edu">
+      <div class="card reveal">
+        <span class="when">Expected graduation 2027</span>
+        <h3>St Christopher's School, Bahrain</h3>
+        <p style="color:var(--muted);margin-bottom:14px">Cambridge International A Levels</p>
+        <div class="grades">
+          <div class="grade"><span>A Level Mathematics<small>Remark pending for A*</small></span><b>A</b></div>
+          <div class="grade"><span>AS Level Geography<small>185 / 200</small></span><b>A</b></div>
+          <div class="grade"><span>Further Mathematics</span><b style="font-size:15px;font-family:var(--sans);color:var(--muted)">In progress</b></div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <span class="when">Courses and programmes</span>
+        <h3>Beyond the classroom</h3>
+        <ul class="list-clean" style="margin-top:14px">
+          <li><span class="yr">2026</span>Harvard DCE Summer Program: Money, Financial Institutions and Markets</li>
+          <li><span class="yr">2025</span>Foundations of Finance, University of Cambridge</li>
+          <li><span class="yr">2025</span>LSE Maths Essentials Course</li>
+          <li><span class="yr">2025</span>A Level Mathematics Certificate, Imperial College London: Algebraic Methods, Graphs and Applied Mathematics</li>
+          <li><span class="yr">2024, 2025</span>UCL Summer Courses: Investment Banking</li>
+          <li><span class="yr">2022, 2023</span>Oxford Summer Courses: Business and Entrepreneurship; Finance and Economics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEYOND -->
+<section id="beyond" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Beyond Academics</span>
+      <h2>Sport, music and service</h2>
+    </div>
+
+    <div class="medals">
+      <div class="medal reveal"><span class="m gold">1st</span><div><b>U19 School Volleyball Team, Winners</b><span>2024/25</span></div></div>
+      <div class="medal reveal"><span class="m silver">2nd</span><div><b>U19 School Volleyball Team, Runners-Up</b><span>2025/26</span></div></div>
+      <div class="medal reveal"><span class="m silver">2nd</span><div><b>U19 BSME Games, Runners-Up</b><span>2024/25 and 2025/26</span></div></div>
+      <div class="medal reveal"><span class="m navy">C</span><div><b>U19 BSME Games, Team Captain</b><span>2024</span></div></div>
+      <div class="medal reveal"><span class="m gold">1st</span><div><b>U15 School Volleyball Team, Winners</b><span>2023/24</span></div></div>
+      <div class="medal reveal"><span class="m navy">8 yrs</span><div><b>St Christopher's Swimming Squad</b><span>Member, 2016 to 2024</span></div></div>
+    </div>
+
+    <div class="grid three" style="margin-top:18px">
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5L7 21l5-3 5 3-1.5-7.5"/></svg></div>
+        <h3>Achievements</h3>
+        <ul>
+          <li>UKMT Silver Award, 2024</li>
+          <li>UKMT Bronze Award, 2025</li>
+          <li>Head Boy Finalist, shortlisted among the final candidates at St Christopher's School</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <h3>Music</h3>
+        <p>ABRSM Grade 7 Piano.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11z"/></svg></div>
+        <h3>Community</h3>
+        <p>Ramadan Food Drive, 2024.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Skills and Interests</span>
+      <h2>What I bring</h2>
+    </div>
+    <div class="skills">
+      <div class="card reveal">
+        <h3>Academic</h3>
+        <div class="pills"><span class="pill">Management</span><span class="pill">Finance</span><span class="pill">Financial Markets</span><span class="pill">Quantitative Analysis</span><span class="pill">Mathematics</span><span class="pill">Global Economics</span></div>
+      </div>
+      <div class="card reveal">
+        <h3>Interests</h3>
+        <div class="pills"><span class="pill">Investment Banking</span><span class="pill">Quantitative Finance</span><span class="pill">Entrepreneurship</span><span class="pill">Investing</span><span class="pill">Markets</span></div>
+      </div>
+      <div class="card reveal">
+        <h3>Strengths</h3>
+        <div class="pills"><span class="pill">Research</span><span class="pill">Leadership</span><span class="pill">Project Development</span><span class="pill">Analytical Thinking</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact reveal">
+      <h2>Get in touch</h2>
+      <p>For research collaboration, questions about The Tutor Trees, or opportunities in finance, I would be glad to hear from you.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:arhaananand2009@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email Arhaan</a>
+        <a class="btn btn-ghost" href="https://thetutortrees.com/" target="_blank" rel="noopener">The Tutor Trees
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> Arhaan Anand · Bahrain</div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn'), links=document.getElementById('navLinks');
+  btn.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('open');btn.setAttribute('aria-expanded','false');});});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
 </body>
 </html>
