@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Arhaan Anand | Portfolio</title>
-<meta name="description" content="Arhaan Anand: A Level student in Bahrain, founder of The Tutor Trees, co-author of research on tutor quality and tutor-student fit, and aspiring investment banker.">
+<meta name="description" content="Arhaan Anand: A Level student in Bahrain, founder of The Tutor Trees, co-author of a published paper on tutor quality and tutor-student fit, and aspiring investment banker.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -93,6 +93,15 @@ section.alt .pill{background:var(--surface)}
 .side .big{font-family:var(--serif);font-size:54px;color:#fff;line-height:1;font-weight:600}
 .side .btn{align-self:flex-start;background:#f3d58f;color:#14213d;position:relative;z-index:1}
 .side .btn:hover{background:#fff}
+
+.keyfacts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:6px 0 18px}
+.keyfacts div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.keyfacts b{display:block;font-family:var(--serif);font-size:20px;color:var(--ink);font-weight:600;line-height:1.2}
+.keyfacts span{font-size:13px;color:var(--muted);line-height:1.4;display:block;margin-top:3px}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px}
+.authors a{color:var(--accent);text-decoration:none}
+.authors a:hover{text-decoration:underline}
+@media (max-width:760px){.keyfacts{grid-template-columns:1fr}}
 
 /* Grid cards */
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -213,7 +222,7 @@ footer{padding:34px 0 44px;text-align:center;color:var(--muted);font-size:13.5px
   <div class="wrap">
     <span class="eyebrow">Student · Founder · Researcher</span>
     <h1>Arhaan Anand</h1>
-    <p class="lede">An A Level student in Bahrain with a focus on management, finance and markets. I founded The Tutor Trees, a peer-to-peer tutoring platform, and co-authored a research paper on why tutor quality and tutor-student fit are not the same thing.</p>
+    <p class="lede">An A Level student in Bahrain with a focus on management, finance and markets. I founded The Tutor Trees, a peer-to-peer tutoring platform, and co-authored a peer-reviewed paper, published in the Journal of Education and Learning, on why tutor quality and tutor-student fit are not the same thing.</p>
     <div class="meta">
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Bahrain</span>
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"/></svg>St Christopher's School, Class of 2027</span>
@@ -228,7 +237,7 @@ footer{padding:34px 0 44px;text-align:center;color:var(--muted);font-size:13.5px
 
     <div class="stats">
       <div class="stat reveal"><b>67</b><span>students helped through The Tutor Trees</span></div>
-      <div class="stat reveal"><b>Silver</b><span>UKMT award, 2024</span></div>
+      <div class="stat reveal"><b>Published</b><span>peer-reviewed paper, Journal of Education and Learning</span></div>
       <div class="stat reveal"><b>A*</b><span>A Level Mathematics</span></div>
       <div class="stat reveal"><b>ABRSM 7</b><span>Grade 7 Piano</span></div>
     </div>
@@ -246,28 +255,40 @@ footer{padding:34px 0 44px;text-align:center;color:var(--muted);font-size:13.5px
 
     <article class="feature reveal">
       <div class="body">
-        <span class="tag">Research Paper · Under review</span>
-        <h3>Tutor quality is not tutor-student fit: Evidence from online secondary-school tutoring</h3>
-        <p class="authors"><strong>Karan Gupta</strong> and <strong>Arhaan Anand</strong> · Journal of Education and Learning</p>
-        <p>Tutoring platforms screen tutors on quality, yet families often say a tutoring relationship failed because the tutor did not suit the student. This study tests whether tutor quality and tutor-student fit are really different things, using records from 220 tutoring relationships on an online IGCSE platform and separate student and parent questionnaires.</p>
-        <p>They are. Quality and fit were almost uncorrelated, and both independently predicted student satisfaction, with fit carrying the larger weight. Quality varied mainly between tutors, while fit varied within each tutor's own set of students. The practical conclusion: screening tutors for quality cannot replace matching them well. On the parent side, perceived value and platform responsiveness were each linked to satisfaction, while the session fee was not.</p>
+        <span class="tag green">Peer-reviewed · Published October 2026</span>
+        <h3>Tutor Quality Is Not Tutor-Student Fit: Evidence from Online Secondary-School Tutoring</h3>
+        <p class="authors"><strong>Karan Gupta</strong> and <strong>Arhaan Anand</strong> · <em>Journal of Education and Learning</em>, Vol. 16, No. 2 (2027), pp. 36 to 51 · <a href="https://doi.org/10.5539/jel.v16n2p36" target="_blank" rel="noopener">doi:10.5539/jel.v16n2p36</a></p>
+        <p>Tutoring platforms screen tutors on quality, yet families often say a tutoring relationship failed because the tutor did not suit the student. This study tests whether tutor quality and tutor-student fit are really different things, using administrative records for 220 tutoring relationships on an online IGCSE platform, 178 student questionnaires, 163 parent questionnaires and 134 matched student-parent pairs.</p>
+        <p>They are. Quality and fit were essentially uncorrelated and loaded on separate factors, and each was independently associated with student satisfaction, with fit carrying the larger weight. About a third of the variation in perceived quality lay between tutors, while fit showed essentially none: the same tutor suited some students and not others. On the parent side, perceived value and platform responsiveness were each linked to satisfaction, while the session fee added nothing once value was accounted for.</p>
+        <div class="keyfacts">
+          <div><b>r = .12</b><span>correlation between perceived quality and fit</span></div>
+          <div><b>.51 vs .18</b><span>weight of fit vs quality in student satisfaction</span></div>
+          <div><b>.31 vs &lt;.01</b><span>share of variance between tutors: quality vs fit</span></div>
+          <div><b>61.8% vs 31.0%</b><span>booked again: original tutor kept vs early tutor change</span></div>
+        </div>
+        <p>The practical conclusion: selecting better tutors and matching them better are different problems. The paper proposes a short pair-level check after the first or second lesson, asking about pace and suitability rather than the tutor's competence, to catch a mismatch before it ends the relationship.</p>
         <p>I provided the study setting and administrative records and contributed to the design of the questionnaires. Data were collected in May and June 2026 under formal ethics approval.</p>
         <div class="pills">
           <span class="pill">Online tutoring</span>
-          <span class="pill">Tutor-student matching</span>
+          <span class="pill">Tutor-student fit</span>
+          <span class="pill">Tutor quality</span>
+          <span class="pill">Student satisfaction</span>
           <span class="pill">Shadow education</span>
-          <span class="pill">Quantitative analysis</span>
         </div>
-        <a class="btn btn-primary" href="https://www.ccsenet.org/journal/index.php/jel" target="_blank" rel="noopener">Journal of Education and Learning
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://ccsenet.org/journal/index.php/jel/article/download/0/0/53862/58875" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download PDF</a>
+          <a class="btn btn-ghost" href="https://www.ccsenet.org/journal/index.php/jel/article/view/0/53862" target="_blank" rel="noopener">Read on the journal site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <a class="btn btn-ghost" href="https://www.researchgate.net/publication/415907371_Tutor_Quality_Is_Not_Tutor-Student_Fit_Evidence_from_Online_Secondary-School_Tutoring" target="_blank" rel="noopener">ResearchGate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
       </div>
       <aside class="side" style="justify-content:flex-start">
         <h4>At a glance</h4>
         <dl>
-          <div><dt>Dataset</dt><dd>220 tutoring relationships, 24 tutors</dd></div>
+          <div><dt>Journal</dt><dd>Journal of Education and Learning, Canadian Center of Science and Education</dd></div>
+          <div><dt>Timeline</dt><dd>Received 28 June 2026 · Accepted 8 September 2026 · Published online 15 October 2026</dd></div>
+          <div><dt>Dataset</dt><dd>220 tutoring relationships, 24 tutors, students aged 14 to 17</dd></div>
           <div><dt>Responses</dt><dd>178 student and 163 parent questionnaires</dd></div>
-          <div><dt>Key finding</dt><dd>Fit and quality are distinct; fit mattered more for satisfaction</dd></div>
-          <div><dt>Journal</dt><dd>Journal of Education and Learning (CCSE)</dd></div>
+          <div><dt>Access</dt><dd>Open access, CC BY 4.0</dd></div>
           <div><dt>My role</dt><dd>Co-author; provided the study setting and records</dd></div>
         </dl>
       </aside>
